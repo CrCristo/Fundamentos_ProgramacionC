@@ -46,3 +46,24 @@
 
 
 ![image](https://user-images.githubusercontent.com/111446231/217905115-848d9a3d-6206-42eb-9ca8-c8a292c634eb.png)
+
+// 03-Personaje
+
+    #include<stdio.h>
+    #include<stdlib.h>
+
+    void  personaje(void)
+    {
+        printf("\n\t Nombre: \t\t\t Augusta Ada King o Ada Byron ");
+        printf("\n\t Fecha de nacimiento: \t\t 10 de diciembre de 1815, Londres, Reino Unido ");
+        printf("\n\t Hechos Relevantes: \t\t Es considerada la primer programadora al crear un algoritmo in%cdito en ese entonces pensado para ser procesado por una m%cquina",130,160);
+        printf("\n\t Fecha de Fallecimiento: \t 27 de noviembre de 1852, Marylebone, Londres, Reino Unido");
+        printf("\n\t ¿Porque te agrada?: \t\t Honestamente, siempre me ha parecido atractiva la est%ctica steampunk y al conocer su historia y aportes Ada Byron me da esa sensaci%cn de innovaci%cn en un mundo del pasado y de una forma m%cs realista",130,162,162,160);
+
+    }
+
+    main()
+    {
+        personaje();
+        system("pause");
+    }
