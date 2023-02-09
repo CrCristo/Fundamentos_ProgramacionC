@@ -43,3 +43,6 @@
         caratula();
         system("pause");
     }
+
+
+![image](https://user-images.githubusercontent.com/111446231/217905115-848d9a3d-6206-42eb-9ca8-c8a292c634eb.png)
