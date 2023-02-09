@@ -24,3 +24,22 @@
       printf("\n\t Fundamentos de Programaci%cn \n\n\n\t",162);
       system("pause");
     }
+
+// 02-Carátula
+
+    #include<stdio.h>
+    #include<stdlib.h>
+
+    void  caratula(void)
+    {
+        system ("color 5F");
+        printf("\n\t Instituto Polit%ccnico Nacional",130);
+        printf("\n\t ESIME TICOM%cN: \n \t Ingenier%ca Aeron%cutica  \n \t Fundamentos de Programaci%cn",160,161,160,162);
+        printf("\n\t Cristopher R%cmulo S%cnchez \n\n\n\t",162,160);
+    }
+
+    main()
+    {
+        caratula();
+        system("pause");
+    }
