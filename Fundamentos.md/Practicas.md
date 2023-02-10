@@ -67,3 +67,24 @@
         personaje();
         system("pause");
     }
+
+
+    //04-Mis_Datos
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+    int nbro=2,edad=21;
+    float hei=1.83,wei=78.5;
+    char nom[7]="Cristo";
+
+    void misdatos(void)
+    {
+        system("color 5F");
+        printf("\n \t Bienvenido, \n \t %s  tienes %d a%cos, pesas %.2f kilos y mides %.2f metros. \n\t Adem%cs, tienes %d hermanos \n\t",nom,edad,164,wei,hei,160,nbro);
+    }
+
+    main()
+    {
+        misdatos();
+        system("pause");
+    }
