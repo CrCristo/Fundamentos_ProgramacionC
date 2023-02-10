@@ -88,3 +88,20 @@
         misdatos();
         system("pause");
     }
+    
+//05-Datos
+
+    #include <stdio.h>
+
+    void datos(void)
+    {
+        int age;
+        printf("\n Cu%cntos a%cos tienes?\n",160,164);
+        scanf("%d",&age);
+        printf("\n Tienes %d a%cos",age,164);
+    }
+
+    main()
+    {
+        datos();
+    }
