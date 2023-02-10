@@ -105,3 +105,30 @@
     {
         datos();
     }
+
+
+//06-Captura
+
+    #include <stdio.h>
+
+    void captura(void)
+    {
+        char name[30];
+        float prom, gasto_men, sueldo_men;
+        printf("\n Ingrese su nombre: \n");
+        //scanf("%s",&name);
+        gets(name); // para que se le pueda poner un espacio
+        printf("\n C%cal es tu promedio escolar?\n",163);
+        scanf("%f",&prom);
+        printf("\n Cu%cntos gastas al mes?\n",160);
+        scanf("%f",&gasto_men);
+        printf("\n C%cal es tu sueldo mensual?\n",163);
+        scanf("%f",&sueldo_men);
+        system("cls");
+        printf("\n\t %s \n\t promedio = \t\t %.2f \n\t gasto mensual = \t %.2f pesos \n\t sueldo mensual = \t %.2f pesos \n",name,prom, gasto_men, sueldo_men);
+    }
+
+    main()
+    {
+        captura();
+    }
