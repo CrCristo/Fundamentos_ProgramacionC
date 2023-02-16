@@ -132,3 +132,30 @@
     {
         captura();
     }
+
+
+//07-FichaAeronave
+
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+
+    char avion[15]="Boeing 787", carro[20]="Ferrari 458";
+    int npas_avion=217,npas_carro=2,vel_avion=954, vel_car=325,gas_car=86, gas_avion=101330;
+    float hei_avion=16.9,lenght_avion=56.7,hei_car=1.213,lenght_car=4.527;
+
+    void fichatecnica(void)
+    {
+        printf("\n\t\t\t\t Ficha T%ccnica: %s",130,avion);
+        printf("\n\t Capacidad de pasajeros \t\t %d  pasajeros  \n\t Dimensiones \t\t\t\t %.3f m altura \n\t\t\t\t\t\t %.3f m longitud \n\t Capacidad de combustible \t\t  %d litros \n\t Velocidad m%cxima \t\t\t %d km*h \n\n",npas_avion,hei_avion,lenght_avion,gas_avion,160,vel_avion);
+        printf("\n\n\t\t ----------------------------------------------------------- \n");
+        printf("\n\t\t\t\t Ficha T%ccnica: %s",130,carro);
+        printf("\n\t Capacidad de pasajeros \t\t %d  pasajeros  \n\t Dimensiones \t\t\t\t %.3f m altura \n\t\t\t\t\t\t %.3f m longitud \n\t Capacidad de combustible \t\t  %d litros \n\t Velocidad m%cxima \t\t\t %d km*h \n\n",npas_carro,hei_car,lenght_car,gas_car,160,vel_car);
+    }
+
+    void fichatecnica(void);
+    main()
+    {
+        fichatecnica();
+        system ("pause");
+    }
