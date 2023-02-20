@@ -159,3 +159,37 @@
         fichatecnica();
         system ("pause");
     }
+    
+    
+ //07-DatosDeClase
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+
+    void datos(void);
+    void imprime(int,float);
+
+    main()
+    {
+        printf ("\n\t Datos del alumno");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        int mat;
+        float prom;
+        printf("\n\t ingresa el nuero de las materias que cursas:\t");
+        scanf("%d",&mat);
+        printf("\n\t ingresa tu promedio:\t");
+        scanf("%f",&prom);
+        imprime(mat,prom);//Lama a la funcion
+    }
+
+    void imprime(int mat,float prom)
+    {
+        system("cls");
+        printf("\n\t Para las materias que tienes: %d",mat);
+        printf("\n\t Tu promedio es de: %.2f \n", prom);
+    }
