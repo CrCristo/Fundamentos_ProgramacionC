@@ -266,3 +266,32 @@
     {
         printf("Area = %.2f \n\n",A);
     }
+    
+ //11-Factura
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+
+
+    void factura(void);
+    void imprime(char[], int ,int, float, float);
+
+    main()
+    {
+        printf("\n\t\t\t Factura");
+        factura();
+        system("pause");
+    }
+
+    void factura(void)
+    {
+        char n_est[6]="E012";
+        int n_fol=967, w_ID=7396;
+        float precio=22.15, monto=1107.5;
+        imprime(n_est,n_fol,w_ID,precio,monto);
+    }
+
+        void imprime(char n_est[6], int n_fol,int w_ID, float precio,float monto)
+        {
+            printf("\n\t Numero de estacion \t\t %d  \n\t Folio \t\t\t\t %d \n\t Identificacion \t\t  %s \n\t Precio \t\t\t %.2f \n\t Monto \t\t\t %.2f  \n\n",n_est,n_fol,w_ID,precio,monto);
+        }
