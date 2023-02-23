@@ -242,6 +242,7 @@
     {
         printf("\n\t\t Area de un Triangulo");
         datos();
+        system("pause");
     }
 
     void datos(void)
@@ -258,9 +259,10 @@
     {
         float a;
         a=(b*h)/(2);
+        return a;
     }
 
     void imprime(float A)
     {
-        printf("Area = %.2f",A);
+        printf("Area = %.2f \n\n",A);
     }
