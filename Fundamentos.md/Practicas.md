@@ -195,7 +195,7 @@
     }
 
 
-//08-Boleto
+//09-Boleto
 
     #include<stdio.h>;
     #include<stdlib.h>;
@@ -227,4 +227,40 @@
     {
         system("cls");
         printf("\n\t Tu vuelo es el: %d \n\t Espera en la sala %d \n\t El avion parte a las %.2f \n",sal,n_vuelo,hora);
+    }
+    
+//10-AreaTrian
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+
+
+    void datos(void);
+    float areatrian(float b,float h);
+    void imprime(float A);
+    main()
+    {
+        printf("\n\t\t Area de un Triangulo");
+        datos();
+    }
+
+    void datos(void)
+    {
+        float b,h,A;
+        printf("\n\t Ingresa la base y la altura:\n");
+        scanf("%f",&b);
+        scanf("%f",&h);
+        A=areatrian(b,h);
+        imprime(A);
+    }
+
+    float areatrian(float b,float h)
+    {
+        float a;
+        a=(b*h)/(2);
+    }
+
+    void imprime(float A)
+    {
+        printf("Area = %.2f",A);
     }
