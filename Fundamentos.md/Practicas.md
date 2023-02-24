@@ -268,9 +268,8 @@
     }
     
  //11-Factura
-
-    #include<stdio.h>;
-    #include<stdlib.h>;
+    #include<stdio.h>
+    #include<stdlib.h>
 
 
     void factura(void);
@@ -291,7 +290,196 @@
         imprime(n_est,n_fol,w_ID,precio,monto);
     }
 
-        void imprime(char n_est[6], int n_fol,int w_ID, float precio,float monto)
-        {
-            printf("\n\t Numero de estacion \t\t %d  \n\t Folio \t\t\t\t %d \n\t Identificacion \t\t  %s \n\t Precio \t\t\t %.2f \n\t Monto \t\t\t %.2f  \n\n",n_est,n_fol,w_ID,precio,monto);
-        }
+    void imprime(char n_est[], int n_fol,int w_ID, float precio,float monto)
+    {
+        printf("\n\t Numero de estacion \t\t %s  \n\t Folio \t\t\t\t %d \n\t Identificacion \t\t  %d \n\t Precio \t\t\t %.2f \n\t Monto \t\t\t %.2f  \n\n",n_est,n_fol,w_ID,precio,monto);
+    }
+        
+ //12-Cuadrado
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+    #include<math.h>;
+
+
+    void datos(void);
+    float areacuad(float l);
+    float percuad(float l);
+    void imprime(float A,float P);
+    main()
+    {
+        printf("\n\t\t Area de un Cuadrado");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float l,A,P;
+        printf("\n\t Ingresa la base:\n");
+        scanf("%f",&l);
+        A=areacuad(l);
+        P=percuad(l);
+        imprime(A,P);
+    }
+
+    float areacuad(float l)
+    {
+        float a;
+        a=pow(l,2);
+        return a;
+    }
+    
+	float percuad(float l)
+	{
+    	float p;
+    	p=(4*l);
+    	return p;
+    }
+    void imprime(float A,float P)
+    {
+        printf("Area = %.2f unidades cuadradas\nPerimetro = %.2f unidades\n\n",A,P);
+    }
+    
+ //13-Rectangulo
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+    #include<math.h>;
+
+
+    void datos(void);
+    float arearec(float b,float h);
+    float perrec(float b,float h);
+    float diagrec(float b,float h);
+    void imprime(float A,float P,float D);
+    main()
+    {
+        printf("\n\t\t Area de un Rectangulo");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float b,h,A,P,D;
+        printf("\n\t Ingresa la base y la altura:\n");
+        scanf("%f%f",&b,&h);
+        A=arearec(b,h);
+        P=perrec(b,h);;
+        D=diagrec(b,h);
+        imprime(A,P,D);
+    }
+
+    float arearec(float b,float h)
+    {
+        float a;
+        a=(b*h);
+        return a;
+    }
+    
+    float perrec(float b,float h)
+	{
+    	float p;
+    	p=(2*b+2*h);
+    	return p;
+    }
+    
+    float diagrec(float b,float h)
+    {
+        float d;
+        d=sqrt((pow(b,2))+(pow(h,2)));
+        return d;
+    }
+
+    void imprime(float A,float P,float D)
+    {
+        printf("Area = %.2f unidades cuadradas\nPerimetro = %.2f unidades\nDiagonal = %.2f unidades\n\n",A,P,D);
+    }
+    
+    
+ //14-Suma de 3 valores
+ 
+    #include<stdio.h>;
+    #include<stdlib.h>;
+    #include<math.h>;
+
+
+    void datos(void);
+    float sum(float a,float b,float c);
+    void imprime(float S);
+    main()
+    {
+        printf("\n\t\t Suma de tras valores");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float a,b,c,S;
+        printf("\n\t Ingresa los tres valores:\n");
+        scanf("%f%f%f",&a,&b,&c);
+		S=sum(a,b,c);
+        imprime(S);
+    }
+
+    float sum(float a,float b,float c)
+    {
+        float S;
+        S=(a+b+c);
+        return S;
+    }
+
+    void imprime(float S)
+    {
+        printf("El resultado de la suma es = %.2f unidades\n\n",S);
+    }
+ 
+ //15-Division y resta
+
+    #include<stdio.h>;
+    #include<stdlib.h>;
+    #include<math.h>;
+
+
+    void datos(void);
+    float res(float a,float b);
+    float divs(float a,float b);
+    void imprime(float R,float D);
+    main()
+    {
+        printf("\n\t\t Resta y division");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float a,b,R,D;
+        printf("\n\t Ingresa los valores:\n");
+        scanf("%f%f",&a,&b);
+		R=res(a,b);
+		D=divs(a,b);
+        imprime(R,D);
+    }
+
+    float res(float a,float b)
+    {
+        float R;
+        R=(a-b);
+        return R;
+    }
+
+    
+    float divs(float a,float b)
+	{
+    	float D;
+    	D=(a/b);
+    	return D;
+    }
+
+    void imprime(float R,float D)
+    {
+        printf("\n El resultado de\nla resta es = %.2f unidades\nla division es = %.2f unidades\n\n",R,D);
+    }
