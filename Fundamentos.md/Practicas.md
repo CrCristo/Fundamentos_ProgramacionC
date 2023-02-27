@@ -563,3 +563,62 @@
     {
         printf("\n El resultado de la potencia es = %.2f unidades\n",P);
     }
+
+
+//18-seno,coseno y tangente
+
+    #include<stdio.h>
+    #include<stdlib.h>
+	#include <math.h>
+	#include <conio.h>
+	
+    void datos(void);
+    float seno(float a);
+    float cose(float a);
+    float tang(float a);
+    void imprime(float S,float C,float T);
+    main()
+    {
+        printf("\n\t\t Seno , Coseno y Tangente");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float a,S,C,T;
+        printf("\n\t Ingresa el valor del angulo que deseas calcular:\n");
+        scanf("%f",&a);
+		S=seno(a);
+		C=cose(a);
+		T=tang(a);
+        imprime(S,C,T);
+    }
+
+    float seno(float a)
+    {
+        float S;
+		S=(((sen(a))*180)/M_PI);
+        return S;
+    }
+
+    
+    float cose(float a)
+    {
+        float C;
+		C=(((cos(a))*180)/M_PI);
+        return C;
+    }
+
+    float tang(float a)
+    {
+        float T;
+		T=(((tan(a))*180)/M_PI);
+        return T;
+    }
+
+
+    void imprime(float S,float C,float T)
+    {
+        printf("\n El resultado de\nSeno es = %.2f grados\nCoseno es = %.2f grados \nTangente es = %.2f grados\n\n",S,C,T);
+    }
