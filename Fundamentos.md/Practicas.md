@@ -484,3 +484,82 @@
     {
         printf("\n El resultado de\nla resta es = %.2f unidades\nla division es = %.2f unidades\n\n",R,D);
     }
+
+
+//16-Raíz
+
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<math.h>
+
+
+    void datos(void);
+    float raiz(float a);
+    void imprime(float R);
+    main()
+    {
+        printf("\n\t\t Raiz");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float a,R;
+        printf("\n\t Ingresa los valores:\n");
+        scanf("%f",&a);
+		R=raiz(a);
+        imprime(R);
+    }
+
+    float raiz(float a)
+    {
+        float R;
+        R=pow(a,0.5);
+        return R;
+    }
+
+
+    void imprime(float R)
+    {
+        printf("\n El resultado de la raiz cuadrada es = %.2f unidades\n",R);
+    }
+
+//17-Potencia
+
+    #include<stdio.h>
+    #include<stdlib.h>
+    #include<math.h>
+
+
+    void datos(void);
+    float pot(float a, int b);
+    void imprime(float R);
+    main()
+    {
+        printf("\n\t\t Potencia");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float a,b,P;
+        printf("\n\t Ingresa los valores del numero y de la potencia:\n");
+        scanf("%f%f",&a,&b);
+		P=pot(a,b);
+        imprime(P);
+    }
+
+    float pot(float a,int b)
+    {
+        float P;
+        P=pow(a,b);
+        return P;
+    }
+
+
+    void imprime(float P)
+    {
+        printf("\n El resultado de la potencia es = %.2f unidades\n",P);
+    }
