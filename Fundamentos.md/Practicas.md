@@ -622,3 +622,80 @@
     {
         printf("\n El resultado de\nSeno es = %.2f grados\nCoseno es = %.2f grados \nTangente es = %.2f grados\n\n",S,C,T);
     }
+//19-Geometria de un cono circular
+
+
+    #include<stdio.h>
+    #include<stdlib.h>
+	#include <math.h>
+	#include <conio.h>
+	
+    void datos(void);
+	float Gen(float,float);
+	float Abase(float,float);
+	float Alate(float,float,float);
+	float Atotal(float,float);
+	float Volu(float,float,float);
+    void imprime(float g,float Ab,float Al,float At,float V);
+    
+    main()
+    {
+        printf("\n\t\t Geometria de un cono circular");
+        datos();
+        system("pause");
+    }
+
+    void datos(void)
+    {
+        float g,h,r,Ab,Al,At,V,pi;
+        pi=3.1416;
+        printf("\n\t Ingresa el valor la la altura y el radio:\n");
+        scanf("%f%f",&h,&r);
+		g= Gen(h,r);
+		Ab= Abase(r,pi);
+		Al= Alate(pi,r,g);
+		At= Atotal(Ab,Al);
+		V= Volu(pi,r,h);
+        imprime(g,Ab,Al,At,V);
+    }
+
+    float Gen(float h,float r)
+    {
+        float g;
+		g=(pow(((h*h)+(r*r)),0.5));
+        return g;
+    }
+
+    
+    float Abase(float pi,float r)
+    {
+        float Ab;
+		Ab=pi*(pow(r,2));
+        return Ab;
+    }
+
+    float Alate(float pi,float r,float g)
+    {
+        float Al;
+		Al=pi*r*g;
+        return Al;
+    }
+
+    float Atotal(float Ab,float Al)
+    {
+        float At;
+		At= Ab+Al;
+        return At;
+    }
+
+    float Volu(float pi,float r,float h)
+    {
+        float V;
+		V=(pi*r*r*h)/(3);
+        return V;
+    }
+
+    void imprime(float g,float Ab,float Al,float At,float V)
+    {
+        printf("\n\t Los datos de la gemoetria del cono son:\n Generatriz %.2f\n Area de Base %.2f\n Area lateral %.2f\nArea total %.2f\n Volumen %.2f\n",g,Ab,Al,At,V);
+    }
