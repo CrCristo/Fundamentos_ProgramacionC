@@ -699,3 +699,92 @@
     {
         printf("\n\t Los datos de la gemoetria del cono son:\n Generatriz %.2f\n Area de Base %.2f\n Area lateral %.2f\nArea total %.2f\n Volumen %.2f\n",g,Ab,Al,At,V);
     }
+
+
+20-Exo-Examen
+
+	#include<stdio.h>
+	#include<stdlib.h>
+
+
+	void datos(void);
+	void imprime(char[], int ,int, float, int);
+
+	main()
+	{
+	    printf("\n\t\t\t Estadistica 2002 AIFA");
+	    datos();
+	    system("pause");
+	}
+
+	void datos(void)
+	{
+	    char n_est[30]="Santa Lucia,Estado de Mexico";
+	    int n_fol=912415, w_ID=36369, op_ae=8992;
+	    float precio=34.1;
+	    imprime(n_est,n_fol,w_ID,precio,op_ae);
+	}
+
+	void imprime(char n_est[], int n_fol,int w_ID, float precio,int op_ae)
+	{
+	    printf("\n\t Ubicacion \t\t %s  \n\t Movimiento pasajeros \t\t\t\t %d \n\t Pasajeros internacionales \t\t  %d \n\t Toneladas de Carga \t\t\t %.2f \n\t Operaciones aereas \t\t\t %d  \n\n",n_est,n_fol,w_ID,precio,op_ae);
+	}
+
+
+21-ExoExamen2
+
+	#include<stdio.h>
+	#include<stdlib.h>
+	#include <math.h>
+	#include <conio.h>
+
+	void datos(void);
+	float raiz(float,float,float);
+	float Apos(float,float,float);
+	float Aneg(float,float,float);
+	void imprime(float Ap,float An);
+
+	main()
+	{
+	    printf("\n\t\t Formula general");
+	    datos();
+	    system("pause");
+	}
+
+	void datos(void)
+	{
+	    float a,b,c,r,Ap,An;
+	    printf("\n\t Ingresa el valor a, b y c:\n");
+	    scanf("%f%f%f",&a,&b,&c);
+		r= raiz(a,b,c);
+		Ap= Apos(r,b,a);
+		An= Aneg(r,b,a);
+	    imprime(Ap,An);
+	}
+
+	float raiz(float a, float b, float c)
+	{
+	    float r;
+	    r=sqrt((b*b)-(4*a*c));
+	    return r;
+	}
+
+	float Apos(float r,float b,float a)
+	{
+	    float Ap;
+		Ap=(-b+r)/(2*a);
+	    return Ap;
+	}
+
+	float Aneg(float r,float b,float a)
+	{
+	    float An;
+		An=(-b-r)/(2*a);
+	    return An;
+	}
+
+
+	void imprime(float Ap,float An)
+	{
+	    printf("\n\t Las raices son:\n Caso 1 %.2f\n Caso 2 %.2f",Ap,An);
+	}
