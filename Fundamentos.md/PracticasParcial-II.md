@@ -1,9 +1,37 @@
 # Prácticas II Parcial
-01-
+//22-Positivo Negativo
 
-02
+    #include <stdio.h>
+    #include <stdlib.h>
+    void datos(void);
+    void imprime(int);
 
-03
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Positivo Y negativo");
+      datos();
+      system("pause");
+    }
 
-04
+    void datos(void)
+    {
+      int n;
+      printf("\n\t Ingrese un valor: \n");
+      scanf("%d",&n);
+      imprime(n);
+    }
+
+    void imprime(int n)
+    {
+      if(n>0) {printf("\n\t El numero es positivo\n\n\t");}
+      if(n==0){printf("\n\t El numero es neutro\n\n\t");}
+      if(n<0) {printf("\n\t El numero es negativo\n\n\t");}
+    }
+
+23- Pendiente
+
+24-
+
+25-
 
