@@ -456,3 +456,32 @@
       if(n==0){printf("\n\t Es multiplo de 5 \n\n\t",n);}
       if(n!=0){printf("\n\t No es multiplo de 5\n\n\t",n);}
     }
+
+
+//32- Ciclo for 0 al 9
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclofor(void);
+
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Multiplo de 5");
+      ciclofor();
+      system("pause"); 
+    }
+
+    void ciclofor(void)
+    {
+        int n;
+        printf("\n\t Imprime 0 al 9 incrementos en uno: \n");
+		for(n=0;n<10;n++)
+		{
+			printf("\n %d",n);
+			//getch();
+		}
+    }
+
