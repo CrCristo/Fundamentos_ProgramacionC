@@ -370,3 +370,89 @@
 			default: printf("\n\n Fuera de rango \n\n");	
 		}
 	}
+
+
+//30-No circula
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	void datos(void);
+	void elige(int);
+
+	main()
+	{
+	  system("color 1F");
+	  printf("\n\n\t No circula \n");
+	  datos();
+	  system("pause");
+	}
+
+	void datos(void)
+	{
+		int n;
+		printf(" Inserta el ultimo nuemero de tu matricula: \n");
+		scanf("%d",&n);
+		elige (n);
+	}
+
+	void elige(int n)
+	{
+		switch(n)
+		{
+			case 5:
+			case 6: printf("\n\t Lunes No circula - Placa Amarillo \n\n");
+			break;
+			case 7: 
+			case 8: printf("\n\t Martes No circula - Placa Rosa \n\n");
+			break;
+			case 3: 
+			case 4: printf("\n\t Miercoles No circula - Placa Rojo \n\n");
+			break;
+			case 1:
+			case 2: printf("\n\t Jueves No circula - Placa Verde \n\n");
+			break;
+			case 9:
+			case 0: printf("\n\t Viernes No circula - Placa Azul \n\n");
+			break;
+			default: printf("\n\n Fuera de rango \n\n");	
+		}
+	}
+	
+	
+//31- Multiplo de 5
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+    void datos(void);
+    int Mult(int);
+    void imprime(int);
+
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Multiplo de 5");
+      datos();
+      system("pause");
+    }
+
+    void datos(void)
+    {
+      int e,n;
+      printf("\n\t Ingrese el numero: \n");
+      scanf("%d",&e);
+      n= Mult(e);
+      imprime(n);
+    }
+
+	int Mult(int e)
+	{
+	    int n;
+		n=(e%5);
+	    return n;
+	}
+    void imprime(int n)
+    {
+
+      if(n==0){printf("\n\t Es multiplo de 5 \n\n\t",n);}
+      if(n!=0){printf("\n\t No es multiplo de 5\n\n\t",n);}
+    }
