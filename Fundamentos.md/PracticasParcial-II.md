@@ -469,7 +469,7 @@
     main()
     {
       system("color 1F");
-      printf("\n\n\t Multiplo de 5");
+      printf("\n\n\t Incremento");
       ciclofor();
       system("pause"); 
     }
@@ -485,3 +485,150 @@
 		}
     }
 
+//33- Ciclo for 9 al 0
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclofor(void);
+
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Decremento");
+      ciclofor();
+      system("pause"); 
+    }
+
+    void ciclofor(void)
+    {
+        int n;
+        printf("\n\t Imprime 0 al 9 incrementos en uno: \n");
+		for(n=9;n>=0;n--)
+		{
+			printf("\n %d",n);
+			//getch();
+		}
+    }
+
+//34- Ciclo for 10 al 30 con imcremento en dos
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclofor(void);
+
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Incremento de dos en dos");
+      ciclofor();
+      system("pause"); 
+    }
+
+    void ciclofor(void)
+    {
+        int n;
+        printf("\n\t Imprime 0 al 9 incrementos en uno: \n");
+		for(n=10;n<=30;n+=2)
+		{
+			printf("\n %d",n);
+			getch();
+		}
+    }
+//35- Ciclo for300 al 270 con decremento en tres
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclofor(void);
+
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t decremento de tres ");
+      ciclofor();
+      system("pause"); 
+    }
+
+    void ciclofor(void)
+    {
+        int n;
+        printf("\n\t Imprime 300 al 270 decrementos en tres: \n");
+		for(n=300;n>=270;n-=3)
+		{
+			printf("\n %d",n);
+			//getch();
+		}
+    }
+    
+//36- Ciclo for raiz cuadrada con decremento en 2
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+	#include<math.h>
+	
+    void ciclofor(void);
+	float raiz(float n);
+	
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Ciclo for raiz cuadrada ");
+      ciclofor();
+      system("pause"); 
+    }
+
+    void ciclofor(void)
+    {
+        int n;
+        printf("\n\t  Imprime raiz cuadrada con decremento en 2: \n");
+		for(n=20;n<=40;n+=2)
+		{
+			printf("%f \n",raiz(n));
+			//getch();
+		}
+    }
+
+	float raiz(float n)
+	{
+	    return sqrt(n);
+	}
+	
+//37- Potencia cubica con inc en 6
+ 
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+	#include<math.h>
+	
+    void ciclofor(void);
+	float raiz(float n);
+	
+    main()
+    {
+      system("color 1F");
+      printf("\n\n\t Ciclo for potencia cubica  ");
+      ciclofor();
+      system("pause"); 
+    }
+
+    void ciclofor(void)
+    {
+        int n;
+        printf("\n\t  Imprime potencia cubica con incremento en 6: \n");
+		for(n=6;n<=60;n+=6)
+		{
+			printf("%f \n",raiz(n));
+			//getch();
+		}
+    }
+
+	float raiz(float n)
+	{
+	    return pow(n,3);
+	}
