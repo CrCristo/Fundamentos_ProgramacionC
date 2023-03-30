@@ -632,3 +632,60 @@
 	{
 	    return pow(n,3);
 	}
+
+//38 - while0a9
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclowhile(void);
+
+    main()
+    {
+      printf("\n\n\t Incremento con while");
+      ciclowhile();
+      system("pause"); 
+    }
+
+    void ciclowhile(void)
+    {
+        int n=0;
+        printf("\n\t Imprime 0 al 9 incrementos en uno: \n");
+		while(n<=9)
+		{
+			printf("\n %d",n);
+			n++;
+			//getch();
+		}
+    }
+
+
+//39 - dowhile0a9
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclodowhile(void);
+
+    main()
+    {
+      printf("\n\n\t Incremento con do-while");
+      ciclodowhile();
+      system("pause"); 
+    }
+
+    void ciclodowhile(void)
+    {
+        int n=0;
+        printf("\n\t Imprime 0 al 9 incrementos en uno: \n");
+		do
+	    	{
+				printf("\n %d",n);
+				n++;
+				//getch();
+			} while(n<10);
+    }
+
+
