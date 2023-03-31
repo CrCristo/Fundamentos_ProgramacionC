@@ -800,3 +800,31 @@
 			} while(n<=9000);
     }
 
+// 44 -  Do while de 5 a 50 multiplicando con n
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclodowhile(void);
+
+    main()
+    {
+      printf("\n\n\t Incremento con do-while en 1000");
+      ciclodowhile();
+      system("pause"); 
+    }
+
+    void ciclodowhile(void)
+    {
+        int n=1;
+        printf("\n\t Imprime 3000 al 9000 incrementos en mil: \n");
+		do
+	    	{
+	    		int m;
+	    		m=5*n;
+				printf("\n %d",m);
+				n++;
+				//getch();
+			} while(n<=10);
+    }
