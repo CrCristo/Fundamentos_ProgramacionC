@@ -823,8 +823,8 @@
 	    	{
 	    		int m;
 	    		m=5*n;
-				printf("\n %d",m);
-				n++;
-				//getch();
-			} while(n<=10);
+			printf("\n 5 X %d = %d",n,m);
+			n++;
+			//getch();
+		} while(n<=10);
     }
