@@ -689,3 +689,114 @@
     }
 
 
+//40 - 20 al 52 con incr en 4
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclowhile(void);
+
+    main()
+    {
+      printf("\n\n\t while 20 a 52");
+      ciclowhile();
+      system("pause"); 
+    }
+
+    void ciclowhile(void)
+    {
+        int n=20;
+        printf("\n\t Imprime 20 al 52 incrementos en 4: \n");
+		while(n<=52)
+		{
+			printf("\n %d",n);
+			n+=4;
+			//getch();
+		}
+    }
+
+
+//41 - 1000 al 500 con decr en 10
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclowhile(void);
+
+    main()
+    {
+      printf("\n\n\t while 1000 a 500");
+      ciclowhile();
+      system("pause"); 
+    }
+
+    void ciclowhile(void)
+    {
+        int n=1000;
+        printf("\n\t Imprime 1000 al 500 incrementos en 10: \n");
+		while(n>=500)
+		{
+			printf("\n %d",n);
+			n-=10;
+			//getch();
+		}
+    }
+
+
+//42 - 70 al 7 con decr en 7
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclowhile(void);
+
+    main()
+    {
+      printf("\n\n\t while 70 a 7");
+      ciclowhile();
+      system("pause"); 
+    }
+
+    void ciclowhile(void)
+    {
+        int n=70;
+        printf("\n\t Imprime 70 al 7 incrementos en 7: \n");
+		while(n>=7)
+		{
+			printf("\n %d",n);
+			n-=7;
+			//getch();
+		}
+    }
+
+
+//43 - 3000 al 9000 con incr en 1000
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclodowhile(void);
+
+    main()
+    {
+      printf("\n\n\t Incremento con do-while en 1000");
+      ciclodowhile();
+      system("pause"); 
+    }
+
+    void ciclodowhile(void)
+    {
+        int n=3000;
+        printf("\n\t Imprime 3000 al 9000 incrementos en mil: \n");
+		do
+	    	{
+				printf("\n %d",n);
+				n+=1000;
+				//getch();
+			} while(n<=9000);
+    }
+
