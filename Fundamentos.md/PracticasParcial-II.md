@@ -810,7 +810,7 @@
 
     main()
     {
-      printf("\n\n\t Incremento con do-while en 1000");
+      printf("\n\n\t Tabla del 5");
       ciclodowhile();
       system("pause"); 
     }
@@ -818,7 +818,6 @@
     void ciclodowhile(void)
     {
         int n=1;
-        printf("\n\t Imprime 3000 al 9000 incrementos en mil: \n");
 		do
 	    	{
 	    		int m;
@@ -827,4 +826,34 @@
 			n++;
 			//getch();
 		} while(n<=10);
+    }
+
+//45 Tabla de n
+
+    #include <stdio.h>
+    #include <stdlib.h>
+	#include <conio.h>
+
+    void ciclodowhile(void);
+
+    main()
+    {
+      printf("\n\n\t Tabla de n");
+      ciclodowhile();
+      system("pause"); 
+    }
+
+    void ciclodowhile(void)
+    {
+        int n=1, m;
+        printf("\n\t Ingresa el numero de la tabla que quierae: \n");
+        scanf("%d",&m);
+		do
+	    	{
+	    		int r;
+	    		r=m*n;
+				printf("\n %d X %d = %d",n,m,r);
+				n++;
+				//getch();
+			} while(n<=10);
     }
