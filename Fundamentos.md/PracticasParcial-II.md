@@ -916,3 +916,64 @@
 		}
 	}
 
+Longitudes.c  V1.2
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <conio.h>
+	void datos(void);
+	int elige(int,int);
+	float mult(int,float);
+
+	main()
+	{
+
+	    char m;
+	    do{ 
+		system ("cls");
+		system("color 4f");
+		printf("\n\n Longitudes\n");
+		datos();
+		printf("\n\n\n\t\t");
+		system("pause");
+		printf ("\n Presiona enter si quieres continuar o cualquier otra tecla para salir");
+		m=getch();
+	    } while (m == 13);
+	}
+
+	void datos(void)
+	{
+	    int num,sel;
+	    printf ("\n\t Selecciona la opcion que desees \n\t 1. km. a millas \n\t 2.millas a km. \n\t 3.metros a pies  \n\t 4.pies a metros \n\t 5.Salir \n\n\t");
+	    scanf("%d",&sel);
+	    printf ("\n\t ingresa la cantidad que deseas convertir \n\n\t");
+	    scanf("%d",&num);
+	    system ("cls");
+		elige(sel,num);
+	} 
+
+	int elige(int sel,int num)
+	{
+		switch(sel)
+		{
+			case 1: printf("\n\t %d km equivalen a %.2f millas  \n\n",num,mult(num,9.87));
+			break;
+			case 2: printf("\n\t %d millas  equivalen a %.2f km \n\n",num,mult(num,9.87));
+			break;
+			case 3: printf("\n\t %d km equivalen a %.2d pies \n\n",num,mult(num,9.87));
+			break;
+			case 4: printf("\n\t %d pies equivalen a %.2d km \n\n",num,mult(num,9.87));
+			break;
+			case 5: printf("\n\t Vuelva pronto \n\n");exit(0);
+			break;
+			default: printf("\n\n Opcion Fuera de rango \n\n");	
+		}
+	}
+
+	float mult (int num,float c)
+	{
+		float C;
+		C=num*c;
+		return C;
+	}
+
