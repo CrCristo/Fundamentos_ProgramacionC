@@ -977,3 +977,56 @@ Longitudes.c  V1.2
 		return C;
 	}
 
+//49. Calificaciones del segundo parcial
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <conio.h>
+
+	void ciclofor(void);
+	float prom(int);
+
+	main()
+	{
+	  printf("\n\n\t Promedio de 6 materias del segundo parcial \n\n\t");
+	  ciclofor();
+	  system("pause"); 
+	}
+
+	void ciclofor(void)
+	{
+		int n,c,p=0;
+	    printf("Ingresa las calificaciones:\n\n\n");
+
+		for(n=1;n<7;n++)
+		{
+			printf("Materia %d = ",n);
+			scanf("%d",c);
+			p=p+c;
+		}
+		printf("\n\n el promedio es = %.2f",prom(p));
+	}
+
+	float prom(int p)
+	{
+		return p/6;
+	}
+
+// 50. Imprimir el abecedario
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <conio.h>
+
+	void ciclofor(void);
+
+	main()
+	{
+	  printf("\n\n\t Promedio de 6 materias del segundo parcial \n\n\t");
+	  ciclofor();
+	  system("pause"); 
+	}
+
+	n=97;n<123;n++
+	
+	c=a  <=z
