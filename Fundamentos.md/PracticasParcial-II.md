@@ -1030,3 +1030,6 @@ Longitudes.c  V1.2
 	n=97;n<123;n++
 	
 	c=a  <=z
+
+// 51. Pago a mensualidades
+
