@@ -1033,3 +1033,72 @@ Longitudes.c  V1.2
 
 // 51. Pago a mensualidades
 
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <conio.h>
+	void datos(void);
+	int elige(int,int);
+	int ver1(int);
+	int ver2(int);
+	float mult(int,float);
+
+	main()
+	{
+
+	    char m;
+	    do{ 
+		system ("cls");
+		system("color 4f");
+		printf("\n\n Kit aeromodelismo  \n");
+		datos();
+		printf("\n\n\n\t\t");
+		system("pause");
+		printf ("\n Presiona enter si quieres continuar o cualquier otra tecla para salir");
+		m=getch();
+	    } while (m == 13);
+	}
+
+	void datos(void)
+	{
+	    int num=250,sel;
+		ver1(num);
+	    printf ("\n\t Selecciona los meses a pagar \n\t 1. 3 meses sin intereses \n\t 2. 6 meses sin intereses  \n\t 3. 9 meses sin intereses  \n\t 4. Salir \n\n\t");
+	    scanf("%d",&sel);
+	    system ("cls");
+		elige(sel,num);
+	} 
+
+	int elige(int sel,int num)
+	{
+		switch(sel)
+		{
+			case 1: printf("\n\t Debes pagar un total de %.2f pesos mesuales durante 3 meses.  \n\n",mult(num,3));
+			break;
+			case 2: printf("\n\t Debes pagar un total de %.2f pesos mesuales durante 6 meses.  \n\n",mult(num,6));
+			break;
+			case 3: printf("\n\t Debes pagar un total de %.2f pesos mesuales durante 9 meses.  \n\n",mult(num,9));
+			break;
+			case 4: printf("\n\t Vuelva pronto \n\n");exit(0);
+			break;
+			default: printf("\n\n Opcion Fuera de rango \n\n");	
+		}
+	}
+
+	int ver1 (int)
+	{
+	    if 249<num & num<1201
+		{
+	    printf ("\n\t ingresa la cantidad a pagar por el kit entre 250b y 1200 pesos \n\n\t");
+	    scanf("%d",&num);
+		}
+		else
+		{
+
+		}
+	}
+	float mult (int num,float c)
+	{
+		float C;
+		C=num/c;
+		return C;
+	}
