@@ -1031,7 +1031,7 @@ Longitudes.c  V1.2
 	
 	c=a  <=z
 
-// 51. Pago a mensualidades
+// 51. kit aeronautica
 
 	#include <stdio.h>
 	#include <stdlib.h>
@@ -1039,7 +1039,6 @@ Longitudes.c  V1.2
 	void datos(void);
 	int elige(int,int);
 	int ver1(int);
-	int ver2(int);
 	float mult(int,float);
 
 	main()
@@ -1060,16 +1059,34 @@ Longitudes.c  V1.2
 
 	void datos(void)
 	{
-	    int num=250,sel;
+	    int num,sel;
 		ver1(num);
-	    printf ("\n\t Selecciona los meses a pagar \n\t 1. 3 meses sin intereses \n\t 2. 6 meses sin intereses  \n\t 3. 9 meses sin intereses  \n\t 4. Salir \n\n\t");
-	    scanf("%d",&sel);
-	    system ("cls");
 		elige(sel,num);
 	} 
 
+
+
+	int ver1(int num)
+	{
+	    do{
+		printf ("\n\t ingresa la cantidad a pagar por el kit entre 250 y 1200 pesos \n\n\t");
+			scanf("%d",&num);
+		} while (250>num & num>1200);
+	}
+
 	int elige(int sel,int num)
 	{
+		printf ("\n\t Selecciona los meses a pagar \n\t 1. 3 meses sin intereses \n\t 2. 6 meses sin intereses  \n\t 3. 9 meses sin intereses  \n\t 4. Salir \n\n\t");
+	    scanf("%d",&sel);	
+
+		while (sel<1 & 4<sel){
+			system ("cls");
+			printf ("\n\t Selecciona los meses a pagar \n\t 1. 3 meses sin intereses \n\t 2. 6 meses sin intereses  \n\t 3. 9 meses sin intereses  \n\t 4. Salir \n\n\t");
+		scanf("%d",&sel);
+		} 
+
+	    system ("cls");
+
 		switch(sel)
 		{
 			case 1: printf("\n\t Debes pagar un total de %.2f pesos mesuales durante 3 meses.  \n\n",mult(num,3));
@@ -1084,21 +1101,84 @@ Longitudes.c  V1.2
 		}
 	}
 
-	int ver1 (int)
-	{
-	    if 249<num & num<1201
-		{
-	    printf ("\n\t ingresa la cantidad a pagar por el kit entre 250b y 1200 pesos \n\n\t");
-	    scanf("%d",&num);
-		}
-		else
-		{
-
-		}
-	}
 	float mult (int num,float c)
 	{
 		float C;
 		C=num/c;
 		return C;
 	}
+	
+	
+52 . menu formulas
+
+	//52. Fórmulas Menu
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <conio.h>
+	void datos(void);
+	float grav(int);
+	float vel(int, int);
+	int menu(int);
+	float imprime(int);
+
+	main()
+	{
+	    char m;
+	    do{ 
+		system ("cls");
+		system("color 4f");
+		printf("\n\n Menu de formulas  \n");
+		datos();
+		printf("\n\n\n\t\t");
+		system("pause");
+		printf ("\n Presiona enter si quieres continuar o cualquier otra tecla para salir");
+		m=getch();
+	    } while (m == 13);
+	}
+
+	void datos(void)
+	{
+	    int sel;
+		menu(sel);
+		imprime(sel);
+	} 
+
+
+
+	int menu(int sel)
+	{
+		do{
+			printf ("Opcion fuera de Rango \n\n\n\t Selecciona la formula que quieres utilizar \n\n\t\t 1. Peso \n\t 2.Velocidad  \n\t 3. Salir \n\n\t");
+		scanf("%d",&sel);
+		} while (sel<1 & 3<sel);
+		return (sel);
+	}
+
+	float imprime(int sel)
+	{
+	    int m,t;
+
+		switch(sel)
+		{
+			case 1: printf("\n\t Ingresa el valor de la masa en kg: "); scanf("%d",&m); printf("\n\t El peso del objeto es de %.2f  \n\n",grav(m));
+			break;
+			case 2: printf("\n\t Ingresa el valor de la distancia y del tiempo respectivamente: "); scanf("%d%d",&m,&t); printf("\n\t La velocidad del objeto es de  %.2f  m*s\n\n",vel(m,t));
+			break;
+			case 3: printf("\n\t Vuelva pronto \n\n");exit(0);
+			break;
+		}
+	}
+
+	float grav (int m)
+	{
+		return (m*9.81);
+	}
+
+	float vel (int m,int t)
+	{
+		return (m/t);
+	}
+	
+53 . Examen
+
