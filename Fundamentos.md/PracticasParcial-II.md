@@ -1182,3 +1182,90 @@ Longitudes.c  V1.2
 	
 53 . Examen
 
+	#include<stdio.h>
+	#include<math.h>
+	void datos(void);
+	float div(float, float,float);
+	float rp (float,float,float);
+	float rn (float,float,float);
+	float rcompl1 (float,float);
+	float rcompl2 (float,float);
+
+	main()
+	{
+	    char m;
+	    do{ 
+		printf("\n\n  formulas General  \n");
+		datos();
+		printf("\n\n\n\t\t");
+		system("pause");
+		printf ("\n Presiona enter si quieres continuar o cualquier otra tecla para salir");
+		m=getch();
+	    } while (m == 13);
+	}
+	
+	void datos(void)
+	{
+		float a,b,c,d,r1,r2;  
+		do{
+			printf("digita a, b , c de respectivamente: ");
+			scanf("%f%f%f",&a,&b,&c);
+		} while (a==0);
+		d=div(b,a,c);
+		if(d>=0){
+			r1=rp(a,b,d);
+			r2=rn(a,b,d);
+			printf("las raices de la ecuacion son reales %.2f , %.2f",r1,r2);
+		}
+		else{
+			r1=rcompl1(a,b);
+			r2=rcompl2(d,a);
+			printf("las raices de la ecuacion son complejas %.2f + %.2fi  ,  %.2f - %.2fi",r1,r2,r1,r2);
+		}
+	} 
+
+	float div( float b,float a,float c){
+		return( b * b - 4 * a * c);
+	}
+	float rp (float a,float  b,float d){
+		return(( -b + sqrt(d)) / (2* a));
+	}
+	float rn (float a,float  b,float d){
+		return(( -b - sqrt(d)) / (2* a));
+	}
+	float rcompl1 (float b,float a){
+		return(-b/(2*a));
+	}
+	float rcompl2 (float d,float a){
+		return (sqrt(-d)/(2*a));
+	}
+
+
+555555-
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <conio.h>
+	void datos(void);
+	main()
+	{
+		int num;
+		do{
+			system("cls");
+			printf("=======Abecedario======\n\n");
+			datos();
+			printf("Presione 1 para repetir, o cualquier tecla para continuar:\n");
+			scanf("%d", &num);
+		}while(num==1);
+	}
+	void datos(void)
+	{
+		char letra;
+		printf("El abecdario es:\n");
+		for(letra='A'; letra<='Z';letra=letra+1)
+		{
+			printf("%c\n", letra);
+			getch();
+		}
+	}
+
