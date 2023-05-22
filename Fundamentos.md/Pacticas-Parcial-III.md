@@ -231,3 +231,213 @@
 		}
 	}
     
+60 .  Imoprime XYZ
+
+	 #include <stdio.h>
+	#include<conio.h>
+	void datos (void);
+	void captura(int[]);
+	void imprime(int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("Imprime XYZ");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[3];
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n los valores del vector 1 son  :");
+	  imprime(v1);
+
+	}
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=2;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+	    void imprime(int v[])
+	{
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			printf(" %d%c ",v[p],e);
+		}
+	}
+	
+	
+61 . Vector Suma 
+
+	 #include <stdio.h>
+	#include<conio.h>
+	void datos (void);
+	void captura(int[]);
+	void suma(int[],int[]);
+	void imprime(int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("Suma de dos vectores");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[3],v2[3];
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n ingresa los daots del vector 2 \n");
+	  captura(v2);
+	  printf("\n los valores del vector 1 son  :");
+	  suma(v1,v2);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=2;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+	void imprime(int v[])
+	{
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			printf(" %d%c ",v[p],e);
+		}
+	}
+
+	void suma(int v1[],int v2[])
+	{
+		int v3[3];
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			v3[p]=v1[p]+v2[p];
+		}
+		imprime(v3);
+	}
+
+
+62 . Vector resta
+
+	 #include <stdio.h>
+	#include<conio.h>
+	void datos (void);
+	void captura(int[]);
+	void suma(int[],int[]);
+	void imprime(int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("Suma de dos vectores");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[3],v2[3];
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n ingresa los daots del vector 2 \n");
+	  captura(v2);
+	  printf("\n los valores del vector 1 son  :");
+	  resta(v1,v2);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=2;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+	void imprime(int v[])
+	{
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			printf(" %d%c ",v[p],e);
+		}
+	}
+
+	void resta(int v1[],int v2[])
+	{
+		int v3[3];
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			v3[p]=v1[p]-v2[p];
+		}
+		imprime(v3);
+	}
+	
+62 multiplicacion de un vector por un numero escalar
+
+	 #include <stdio.h>
+	#include<conio.h>
+	void datos (void);
+	void captura(int[]);
+	void suma(int[],int[]);
+	void imprime(int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("multiplicacion por un valor escalar");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[3];
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n los valores del vector 1 son  :");
+	  mult(v1);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=2;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+	void imprime(int v[])
+	{
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			printf(" %d%c ",v[p],e);
+		}
+	}
+
+	void mult(int v1[])
+	{
+		int v3[3];
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			v3[p]=v1[p]*4;
+		}
+		imprime(v3);
+	}
+
