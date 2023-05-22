@@ -407,11 +407,13 @@
 
 	void datos (void)
 	{
-	  int v1[3];
+	  int v1[3],f;
 	  printf("\n ingresa los daots del vector 1 \n");
 	  captura(v1);
+	  printf("\n ingresa el vector escalar");
+	  scanf("%d",&f);
 	  printf("\n los valores del vector 1 son  :");
-	  mult(v1);
+	  mult(v1,f);
 	}
 
 	void captura(int v[])
@@ -431,12 +433,12 @@
 		}
 	}
 
-	void mult(int v1[])
+	void mult(int v1[],int f)
 	{
 		int v3[3];
 		for (p=0,e='i';p<3;p++,e++)
 		{
-			v3[p]=v1[p]*4;
+			v3[p]=v1[p]*f;
 		}
 		imprime(v3);
 	}
