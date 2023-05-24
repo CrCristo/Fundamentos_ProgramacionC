@@ -443,3 +443,129 @@
 		imprime(v3);
 	}
 
+63 . Norma de un vector
+
+	 #include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos (void);
+	void captura(int[]);
+	void norma(int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("Norma de un vector");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[2],f;
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n la norma del vector 1 es  :");
+	  norma(v1);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=1;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+
+
+	void norma(int v1[])
+	{
+		float v3=0;
+		for (p=0,e='i';p<2;p++,e++)
+		{
+			v3=v3+(v1[p]*v1[p]);
+		}
+		v3=sqrt(v3);
+		printf("\n %.2f \n",v3);
+	}
+
+64 . Angulo entre dos vectores s
+
+	 #include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos (void);
+	void captura(int[]);
+	float norma(int[]);
+	void angulo(int[],int[],float,float);
+	int suma(int[],int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("Norma de un vector");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[2],v2[2];
+	  float n1,n2;
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n ingresa los daots del vector 2 \n");
+	  captura(v2);
+	  n1=norma(v1);
+	  n2=norma(v2);
+	  angulo(v1,v2,n1,n2);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=1;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+
+
+	float norma(int v[])
+	{
+		float v3=0;
+		for (p=0,e='i';p<2;p++,e++)
+		{
+			v3=v3+(v[p]*v[p]);
+		}
+		v3=sqrt(v3);
+		return v3;
+	}
+	
+	void angulo(int v1[],int v2[],float n1,float n2)
+	{
+		int v;
+		float ang;
+		v=suma(v1,v2);
+		ang= acos(v/(n1*n2));
+		printf ("el angulo entre los vectores es : %.2f \n\n",ang);
+	}
+	
+		int suma(int v1[],int v2[])
+	{
+		int v3[3],v;
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			v3[p]=v1[p]+v2[p];
+		}
+		for (p=0,e='i';p<2;p++,e++)
+		{
+			v=v+v3[p];
+		}
+		return v;
+	}
