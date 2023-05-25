@@ -552,20 +552,129 @@
 		int v;
 		float ang;
 		v=suma(v1,v2);
-		ang= acos(v/(n1*n2));
+		ang= v/(n1*n2);
+		ang= acos(ang);
 		printf ("el angulo entre los vectores es : %.2f \n\n",ang);
 	}
 	
 		int suma(int v1[],int v2[])
 	{
-		int v3[3],v;
-		for (p=0,e='i';p<3;p++,e++)
+		int v3[2],v;
+		for (p=0,e='i';p<2;p++,e++)
 		{
-			v3[p]=v1[p]+v2[p];
+			v3[p]=v1[p]*v2[p];
 		}
 		for (p=0,e='i';p<2;p++,e++)
 		{
 			v=v+v3[p];
 		}
 		return v;
+	}
+	
+	
+65 . vector producto punto
+
+	 #include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos (void);
+	void captura(int[]);
+	int suma(int[],int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("producto punto de un vector");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[2],v2[2];
+	  float n1,n2;
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n ingresa los daots del vector 2 \n");
+	  captura(v2);
+	  suma(v1,v2);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=1;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+	int suma(int v1[],int v2[])
+	{
+		int v3[2],v;
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			v3[p]=v1[p]*v2[p];
+			}
+		for (p=0,e='i';p<2;p++,e++)
+		{
+			v=v+v3[p];
+		}
+		printf("El producto punto de los dos vectores es = %d \n\n",v);
+	}
+	
+66 . La distancia entre dos puntos
+
+
+	 #include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos (void);
+	void captura(int[]);
+	int suma(int[],int[]);
+	int p;
+	char e;
+
+	main ()
+	{
+	  printf ("la distancia ente dos puntos ");
+	  datos();
+	  system("pause");
+	}
+
+	void datos (void)
+	{
+	  int v1[2],v2[2];
+	  float n1,n2;
+	  printf("\n ingresa los daots del vector 1 \n");
+	  captura(v1);
+	  printf("\n ingresa los daots del vector 2 \n");
+	  captura(v2);
+	  suma(v1,v2);
+	}
+
+	void captura(int v[])
+	{
+		for (p=0,e='x';p<=1;p++,e++)
+		{
+			printf("v[%c]=",e);
+			scanf("%d",&v[p]);
+		}
+	}
+
+	int suma(int v1[],int v2[])
+	{
+		int v3[2];
+		float v;
+		for (p=0,e='i';p<3;p++,e++)
+		{
+			v3[p]=pow((v2[p]-v1[p]),2);
+			}
+		for (p=0,e='i';p<2;p++,e++)
+		{
+			v=v+v3[p];
+		}
+		v= sqrt(v);
+		printf("La distancia entre los puntos = %.2f \n\n",v);
 	}
