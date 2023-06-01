@@ -678,3 +678,347 @@
 		v= sqrt(v);
 		printf("La distancia entre los puntos = %.2f \n\n",v);
 	}
+
+67 . proyeccion
+
+68 . Matriz inicializada
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void imprime(int[][2]);
+	int f,c;
+	
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matriz [2][2]={1,2,3,4};
+		int matris [2][2];
+		matris[0][0]=4;
+		matris[0][1]=3;
+		matris[1][0]=2;
+		matris[1][1]=1;
+		imprime(matris);
+		imprime(matriz);
+	}
+
+	void imprime(int matriz[][2])
+	{
+		for(f=0;f<2;f++)
+		{
+			for(c=0;c<2;c++)
+			{
+				printf("%d",matriz[f][c]);
+				printf("\n");
+			}
+		}
+	}
+	
+69 . Captura de una matriz
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[][2]);
+	void imprime(int[][2]);
+	int f,c;
+	
+	main()
+	{
+		  printf ("matriz capturada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matriz [2][2]={1,2,3,4};
+		int matris [2][2];
+		int matrix[2][2];
+		matris[0][0]=4;
+		matris[0][1]=3;
+		matris[1][0]=2;
+		matris[1][1]=1;
+		captura(matrix);
+		imprime(matris);
+		imprime(matriz);
+		imprime(matrix);
+	}
+
+	void captura (int M[][2])
+	{
+		for(f=0;f<2;f++)
+		{
+			for(c=0;c<2;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int matriz[][2])
+	{
+		for(f=0;f<2;f++)
+		{
+			for(c=0;c<2;c++)
+			{
+				printf("%d",matriz[f][c]);
+				printf("\n");
+			}
+		}
+		printf("\n");
+	}
+	
+70 . 3X4
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[3][4]);
+	void imprime(int[3][4]);
+	int f,c;
+
+	main()
+	{
+		  printf ("matriz 3X4 \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[3][4];
+		captura(matrix);
+		imprime(matrix);
+	}
+
+	void captura (int M[3][4])
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<4;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[3][4])
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<4;c++)
+			{
+				printf("%d",M[f][c]);
+				printf("\n");
+			}
+		}
+		printf("\n");
+	}
+
+71 . 9X1
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[9][1]);
+	void imprime(int[9][1]);
+	int f,c;
+	
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[9][1];
+		captura(matrix);
+		imprime(matrix);
+	}
+
+	void captura (int M[9][1])
+	{
+		for(f=0;f<9;f++)
+		{
+			for(c=0;c<1;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[9][1])
+	{
+		for(f=0;f<9;f++)
+		{
+			for(c=0;c<1;c++)
+			{
+				printf("%d",M[f][c]);
+				printf("\n");
+			}
+		}
+		printf("\n");
+	}
+
+72 . 3X3
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[3][3]);
+	void imprime(int[3][3]);
+	int f,c;
+
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[3][3];
+		captura(matrix);
+		imprime(matrix);
+	}
+
+	void captura (int M[3][3])
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<3;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[3][3])
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<3;c++)
+			{
+				printf("%d",M[f][c]);
+				printf("\n");
+			}
+		}
+		printf("\n");
+	}
+
+73 . 5X2
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[5][2]);
+	void imprime(int[5][2]);
+	int f,c;
+	
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[5][2];
+		captura(matrix);
+		imprime(matrix);
+	}
+
+	void captura (int M[5][2])
+	{
+		for(f=0;f<5;f++)
+		{
+			for(c=0;c<2;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[5][2])
+	{
+		for(f=0;f<5;f++)
+		{
+			for(c=0;c<2;c++)
+			{
+				printf("%d",M[f][c]);
+				printf("\n");
+			}
+		}
+		printf("\n");
+	}
+
+74 . 1X6
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[1][6]);
+	void imprime(int[1][6]);
+	int f,c;
+	
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[5][2];
+		captura(matrix);
+		imprime(matrix);
+	}
+
+	void captura (int M[1][6])
+	{
+		for(f=0;f<1;f++)
+		{
+			for(c=0;c<6;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[1][6])
+	{
+		for(f=0;f<1;f++)
+		{
+			for(c=0;c<6;c++)
+			{
+				printf("%d",M[f][c]);
+				printf("\n");
+			}
+		}
+		printf("\n");
+	}
+	
