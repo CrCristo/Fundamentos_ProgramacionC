@@ -1022,3 +1022,211 @@
 		printf("\n");
 	}
 	
+75 . Escoger el número de filas y columnas de una matriz
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	#define T 10
+	void datos(void);
+	void captura(int[][T],int,int);
+	void imprime(int[][T],int,int);
+	int f,c;
+
+	main()
+	{
+		  printf ("Escoger el número de filas y columna de una matriz \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int f1,c1;
+		printf("Ingresa el número de filas y columnas de la matriz:  \n");
+		scanf("%d%d",&f1,&c1);
+		int matrix[f1][c1];
+		captura(matrix,f1,c1);
+		imprime(matrix,f1,c1);
+	}
+
+	void captura (int M[][T],int f1,int c1)
+	{
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[][T],int f1,int c1)
+	{
+		system("cls");
+		printf("\n");
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("\t");
+				printf("%d",M[f][c]);
+			}
+			printf("\n");
+		}
+		printf("\n");
+	}
+
+76 . Promedio de un matriz
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	#define T 10
+	float promedio(int[][T],int,int);
+	void datos(void);
+	void captura(int[][T],int,int);
+	void imprime(int[][T],int,int);
+	int f,c;
+
+	main()
+	{
+		  printf ("matriz promedio \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int f1,c1;
+		printf("Ingresa el número de filas y columnas de la matriz:  \n");
+		scanf("%d%d",&f1,&c1);
+		int matrix[f1][c1];
+		captura(matrix,f1,c1);
+		imprime(matrix,f1,c1);
+		printf("el promedio de la matruiz es ; %.2f",promedio(matrix,f1,c1));
+		printf("\n\n");
+	}
+
+	void captura (int M[][T],int f1,int c1)
+	{
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[][T],int f1,int c1)
+	{
+		system("cls");
+		printf("\n");
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("\t");
+				printf("%d",M[f][c]);
+			}
+			printf("\n");
+		}
+		printf("\n");
+	}
+
+	float promedio(int matrix[][T],int c1,int f1)
+	{
+		float prom;
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				prom=(matrix[f][c])+prom;
+			}
+		}
+		prom=(prom)/(f1*c1);
+		return prom;
+	}
+	
+77 . suma de dos matrices 
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	#define T 10
+	void datos(void);
+	void captura(int[][T],int,int);
+	void imprime(int[][T],int,int);
+	int suma(int[][T],int[][T],int,int);
+	int f,c;
+
+	main()
+	{
+		  printf ("suma de matriz \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int f1,c1;
+		int matrix[f1][c1],matriz[f1][c1],matris[f1][c1];
+
+		printf("Ingresa el número de filas y columnas de la matriz:  \n");
+		scanf("%d%d",&f1,&c1);
+		printf("\n\n");
+
+		captura(matrix,f1,c1);
+		printf("\n\n");
+		captura(matriz,f1,c1);
+
+		matris[f1][c1]=suma(matriz,matrix,f1,c1);
+		imprime(matris,f1,c1);
+		printf("\n\n");
+	}
+
+	void captura (int M[][T],int f1,int c1)
+	{
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[][T],int f1,int c1)
+	{
+		system("cls");
+		printf("\n");
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("\t");
+				printf("%d",M[f][c]);
+			}
+			printf("\n");
+		}
+		printf("\n");
+	}
+
+	int suma(int matriz[][T],int matrix[][T],int f1,int c1)
+	{
+		int mR[f1][c1];
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				mR[f][c]=(matriz[f][c])+(matrix[f][c]);
+			}
+		}
+	}
+
+78 . resta de dos matrices
+
