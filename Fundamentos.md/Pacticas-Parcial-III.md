@@ -1230,3 +1230,85 @@
 
 78 . resta de dos matrices
 
+
+79 . PROYECTO
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[3][3]);
+	int det(int[3][3]);
+	int d2x2(int[3][3],int);
+	void imprime(int[3][3]);
+	int f,c;
+
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[3][3],D1;
+		captura(matrix);
+		D1=det(matrix);
+		printf("%d",D1);
+	}
+
+	void captura (int M[3][3])
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<3;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	int det(int M[3][3])
+	{
+		int f1,Res1=0,d;
+		for(c=0;c<3;c++)
+		{
+			for(f=0;f<1;f++)
+			{
+				f1=c;
+				d=d2x2(M,f1);
+				Res1=(Res1)+(-1*M[f][c]*d);
+			}
+		}
+		return Res1;
+	}
+
+	int d2x2(int M[3][3],int f1)
+	{
+		int M1[2][2],d2;
+		for(f=1;f<3;f++)
+		{
+			for(c=0;c<3;c++)
+			{
+				if (c==f1){
+					break;
+				}
+				else{
+					for(f=0;f<2;f++)
+					{
+						for(c=0;c<2;c++)
+						{
+							M1[f][c]=M[f][c];
+						}
+					}	
+				}
+			}
+		}
+		d2=M1[0][0]*M1[1][1] - M1[1][0]*M1[0][1];
+		printf("%d",d2);
+		return d2;
+	}
+
+
