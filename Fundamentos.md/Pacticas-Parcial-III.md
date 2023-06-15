@@ -1232,12 +1232,320 @@
 
 
 79 . Matriz identidad
+/*
+* C Program to check if a given matrix is an identity matrix
+*/
+
+	#include <stdio.h>
+
+	int main (void)
+	{
+		int a[10][10];
+		int i = 0, j = 0, row = 0, col = 0;
+
+		printf ("Enter the order of the matrix (mxn):\n");
+		printf ("where m = number of rows; and\n");
+		printf ("      n = number of columns\n");
+		scanf ("%d %d", &row, &col);
+
+		int flag = 0;
+
+		printf ("Enter the elements of the matrix\n");
+		for (i = 0; i < row; i++)
+		{
+			for (j = 0; j < col; j++)
+			{
+				scanf ("%d", &a[i][j]);
+			}
+		}
+
+		for (i = 0; i < row; i++)
+		{
+			for (j = 0; j < col; j++)
+			{
+				if (i == j && a[i][j] != 1)
+				{
+					flag = -1;
+					break;
+				}
+				else if (i != j && a[i][j] != 0)
+				{
+					flag = -1;
+					break;
+				}
+			}
+		}
+
+		if (flag == 0)
+		{
+			printf ("It is a IDENTITY MATRIX\n");
+		}
+		else
+		{
+			printf ("It is NOT an identity matrix\n");
+		}
+
+		return 0;
+	}
 
 80 . Matriz simetrica 
-// saber si una matriz es simetrica
 
+	// saber si una matriz es simetrica
 
-81 . PROYECTO
+	/*
+	* C Program to check if a given matrix is an identity matrix
+	*/
+	#include <stdio.h>
+
+	int main (void)
+	{
+		int a[10][10];
+		int i = 0, j = 0, row = 0, col = 0;
+
+		printf ("Enter the order of the matrix (mxn):\n");
+		scanf ("%d %d", &row, &col);
+
+		int flag = 0;
+
+	 //captura
+		printf ("Enter the elements of the matrix\n");
+		for (i = 0; i < row; i++)
+		{
+			for (j = 0; j < col; j++)
+			{
+				scanf ("%d", &a[i][j]);
+			}
+		}
+	 //saer sui es simetrica 
+		for (i = 0; i < row; i++)
+		{
+			for (j = 0; j < col; j++)
+			{
+				if (i == j)
+				{
+					break;
+				}
+				else if (i != j && a[i][j] != a[j][i])
+				{
+					flag = -1;
+					break;
+				}
+			}
+		}
+
+		if (flag == 0)
+		{
+			printf ("es una matriz simetrica \n");
+		}
+		else
+		{
+			printf ("No es una matriz simetrica \n");
+		}
+
+		return 0;
+	}
+
+81 . triangular de una matriz
+
+    #include <stdio.h>
+    void main()
+    {
+ 
+        int i, j, r, c, array[10][10];
+        printf("Enter the r and c value:");
+ 
+        scanf("%d%d", &r, &c);
+        for (i = 1; i <= r; i++)
+        {
+            for (j = 1; j <= c; j++)
+            {
+                printf("array[%d][%d] = ", i, j);
+                scanf("%d", &array[i][j]);
+            }
+        }
+ 
+        printf("matrix is");
+        for (i = 1; i <= r; i++)
+        {
+            for (j = 1; j <= c; j++)
+            {
+                printf("%d", array[i][j]);
+            }
+            printf("\n");
+        }
+ 
+        for (i = 1; i <= r; i++)
+        {
+            printf("\n");
+            for (j = 1; j <= c; j++)
+            {
+                if (i >= j)
+                {
+                    printf("%d", array[i][j]);
+                }
+                else
+                {
+                    printf("\t");
+                }
+            }
+ 
+        }
+ 
+        printf("\n\n");
+        for (i = 1; i <= r; i++)
+        {
+            printf("\n");
+            for (j = 1; j <= c; j++)
+            {
+	            if (j >= i)
+                    {
+                	printf("%d", array[i][j]);
+            	    }
+            	    else 
+                    {
+                	//printf("\t");
+	            }
+            // printf("\n");
+ 
+        }
+ 
+    }
+
+82 . MAtriz inversa 
+
+	#include<stdio.h>
+	#include<math.h>
+	float determinant(float [][25], float);
+	void cofactor(float [][25], float);
+	void transpose(float [][25], float [][25], float);
+	int main()
+	{
+	  float a[25][25], k, d;
+	  int i, j;
+	  printf("Enter the order of the Matrix : ");
+	  scanf("%f", &k);
+	  printf("Enter the elements of %.0fX%.0f Matrix : \n", k, k);
+	  for (i = 0;i < k; i++)
+	    {
+	     for (j = 0;j < k; j++)
+	       {
+		scanf("%f", &a[i][j]);
+		}
+	    }
+	  d = determinant(a, k);
+	  if (d == 0)
+	   printf("\nInverse of Entered Matrix is not possible\n");
+	  else
+	   cofactor(a, k);
+	}
+
+	/*For calculating Determinant of the Matrix */
+	float determinant(float a[25][25], float k)
+	{
+	  float s = 1, det = 0, b[25][25];
+	  int i, j, m, n, c;
+	  if (k == 1)
+	    {
+	     return (a[0][0]);
+	    }
+	  else
+	    {
+	     det = 0;
+	     for (c = 0; c < k; c++)
+	       {
+		m = 0;
+		n = 0;
+		for (i = 0;i < k; i++)
+		  {
+		    for (j = 0 ;j < k; j++)
+		      {
+			b[i][j] = 0;
+			if (i != 0 && j != c)
+			 {
+			   b[m][n] = a[i][j];
+			   if (n < (k - 2))
+			    n++;
+			   else
+			    {
+			     n = 0;
+			     m++;
+			     }
+			   }
+		       }
+		     }
+		  det = det + s * (a[0][c] * determinant(b, k - 1));
+		  s = -1 * s;
+		  }
+	    }
+
+	    return (det);
+	}
+
+	void cofactor(float num[25][25], float f)
+	{
+	 float b[25][25], fac[25][25];
+	 int p, q, m, n, i, j;
+	 for (q = 0;q < f; q++)
+	 {
+	   for (p = 0;p < f; p++)
+	    {
+	     m = 0;
+	     n = 0;
+	     for (i = 0;i < f; i++)
+	     {
+	       for (j = 0;j < f; j++)
+		{
+		  if (i != q && j != p)
+		  {
+		    b[m][n] = num[i][j];
+		    if (n < (f - 2))
+		     n++;
+		    else
+		     {
+		       n = 0;
+		       m++;
+		       }
+		    }
+		}
+	      }
+	      fac[q][p] = pow(-1, q + p) * determinant(b, f - 1);
+	    }
+	  }
+	  transpose(num, fac, f);
+	}
+	/*Finding transpose of matrix*/ 
+	void transpose(float num[25][25], float fac[25][25], float r)
+	{
+	  int i, j;
+	  float b[25][25], inverse[25][25], d;
+
+	  for (i = 0;i < r; i++)
+	    {
+	     for (j = 0;j < r; j++)
+	       {
+		 b[i][j] = fac[j][i];
+		}
+	    }
+	  d = determinant(num, r);
+	  for (i = 0;i < r; i++)
+	    {
+	     for (j = 0;j < r; j++)
+	       {
+		inverse[i][j] = b[i][j] / d;
+		}
+	    }
+	   printf("\n\n\nThe inverse of matrix is : \n");
+
+	   for (i = 0;i < r; i++)
+	    {
+	     for (j = 0;j < r; j++)
+	       {
+		 printf("\t%f", inverse[i][j]);
+		}
+	    printf("\n");
+	     }
+	}
+PROYECTO
 
 	#include <stdio.h>
 	#include<conio.h>
@@ -1317,4 +1625,57 @@
 		return d2;
 	}
 
+
+
+otros 
+
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	void datos(void);
+	void captura(int[3][3]);
+	int det(int[3][3]);
+	void camcol(int[3][3], int[3][1]);
+	void imprime(int[3][3]);
+	int f,c;
+
+	main()
+	{
+		  printf ("matriz inicializada \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int matrix[3][3],MatRES[3][1], M[3][3],D1,d1,d2,d3;
+		captura(matrix);
+		D1=det(matrix);
+		printf(" el determinante de la MAtriz A es  %d \n",D1);
+		//ahora guardamos ese valors y hacemos una mtraiz que va acambiar la columna por la de los resultadoas
+		M=cambcol(matrix,MatRES);
+		d1=det(M);
+		M=cambcol(matrix,MatRES);
+		d1=det(M);
+		M=cambcol(matrix,MatRES);
+		d1=det(M);
+	}
+
+	void captura (int M[3][3])
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<3;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	int det(int a[3][3])
+	{
+		int d;
+  		d = a[0][0] * ((a[1][1]*a[2][2]) - (a[2][1]*a[1][2])) -a[0][1] * (a[1][0]* a[2][2] - a[2][0] * a[1][2]) + a[0][2] * (a[1][0] * a[2][1] - a[2][0] * a[1][1]);
+	}
 
