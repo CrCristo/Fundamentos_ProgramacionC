@@ -1231,7 +1231,13 @@
 78 . resta de dos matrices
 
 
-79 . PROYECTO
+79 . Matriz identidad
+
+80 . Matriz simetrica 
+// saber si una matriz es simetrica
+
+
+81 . PROYECTO
 
 	#include <stdio.h>
 	#include<conio.h>
