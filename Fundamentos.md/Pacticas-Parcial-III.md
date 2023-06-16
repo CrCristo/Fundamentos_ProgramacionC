@@ -1160,7 +1160,7 @@
 	void datos(void);
 	void captura(int[][T],int,int);
 	void imprime(int[][T],int,int);
-	int suma(int[][T],int[][T],int,int);
+	int suma(int[][T],int[][T],int[][T],int,int);
 	int f,c;
 
 	main()
@@ -1182,7 +1182,7 @@
 		printf("\n\n");
 		captura(matriz,f1,c1);
 
-		matris[f1][c1]=suma(matriz,matrix,f1,c1);
+		suma(matriz,matrix,matris,f1,c1);
 		imprime(matris,f1,c1);
 		printf("\n\n");
 	}
@@ -1216,20 +1216,92 @@
 		printf("\n");
 	}
 
-	int suma(int matriz[][T],int matrix[][T],int f1,int c1)
+	int suma(int matriz[][T],int matrix[][T],int matris[][T],int f1,int c1)
 	{
-		int mR[f1][c1];
 		for(f=0;f<f1;f++)
 		{
 			for(c=0;c<c1;c++)
 			{
-				mR[f][c]=(matriz[f][c])+(matrix[f][c]);
+				matris[f][c]=(matriz[f][c])+(matrix[f][c]);
 			}
 		}
 	}
 
 78 . resta de dos matrices
 
+	#include <stdio.h>
+	#include<conio.h>
+	#include<math.h>
+	#define T 10
+	void datos(void);
+	void captura(int[][T],int,int);
+	void imprime(int[][T],int,int);
+	int suma(int[][T],int[][T],int[][T],int,int);
+	int f,c;
+
+	main()
+	{
+		  printf ("suma de matriz \n\n");
+		  datos();
+		  system("pause");
+	}
+	void datos (void)
+	{
+		int f1,c1;
+		int matrix[f1][c1],matriz[f1][c1],matris[f1][c1];
+
+		printf("Ingresa el número de filas y columnas de la matriz:  \n");
+		scanf("%d%d",&f1,&c1);
+		printf("\n\n");
+
+		captura(matrix,f1,c1);
+		printf("\n\n");
+		captura(matriz,f1,c1);
+
+		suma(matriz,matrix,matris,f1,c1);
+		imprime(matris,f1,c1);
+		printf("\n\n");
+	}
+
+	void captura (int M[][T],int f1,int c1)
+	{
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("%d,%d=",f,c);
+				scanf("%d",&M[f][c]);
+				printf("\n");
+			}
+		}
+	}
+
+	void imprime(int M[][T],int f1,int c1)
+	{
+		system("cls");
+		printf("\n");
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				printf("\t");
+				printf("%d",M[f][c]);
+			}
+			printf("\n");
+		}
+		printf("\n");
+	}
+
+	int suma(int matriz[][T],int matrix[][T],int matris[][T],int f1,int c1)
+	{
+		for(f=0;f<f1;f++)
+		{
+			for(c=0;c<c1;c++)
+			{
+				matris[f][c]=(matriz[f][c])-(matrix[f][c]);
+			}
+		}
+	}
 
 79 . Matriz identidad
 /*
@@ -1545,7 +1617,7 @@
 	    printf("\n");
 	     }
 	}
-PROYECTO
+PROYECTO Prototipo
 
 	#include <stdio.h>
 	#include<conio.h>
@@ -1627,40 +1699,60 @@ PROYECTO
 
 
 
-otros 
+ProyectoVFinal 
 
 	#include <stdio.h>
 	#include<conio.h>
 	#include<math.h>
 	void datos(void);
-	void captura(int[3][3]);
+	void captura(int[3][3],int[3][1]);
 	int det(int[3][3]);
-	void camcol(int[3][3], int[3][1]);
+	void cambcol(int[3][3], int[3][1],int[3][3],int);
 	void imprime(int[3][3]);
+	void incognita(int,int);
 	int f,c;
 
 	main()
 	{
-		  printf ("matriz inicializada \n\n");
-		  datos();
-		  system("pause");
+		int num;
+		do{
+			system("cls");
+			printf("Resolucion de un sistema de ecuaciones 3x3\n\n");
+			datos();
+			printf("Presione 1 para repetir o cualquier otro numero para finalizar:\n");
+			scanf("%d", &num);
+		}while(num==1);
 	}
 	void datos (void)
 	{
-		int matrix[3][3],MatRES[3][1], M[3][3],D1,d1,d2,d3;
-		captura(matrix);
+		int matrix[3][3],MatRES[3][1], M[3][3],D1,d1,d2,d3, cont =0;
+		captura(matrix,MatRES);
 		D1=det(matrix);
-		printf(" el determinante de la MAtriz A es  %d \n",D1);
-		//ahora guardamos ese valors y hacemos una mtraiz que va acambiar la columna por la de los resultadoas
-		M=cambcol(matrix,MatRES);
+		//ahora guardamos ese valors y hacemos una mtraiz que va acambiar la columna por la de los resultados
+		cambcol(matrix,MatRES,M,cont);
 		d1=det(M);
-		M=cambcol(matrix,MatRES);
-		d1=det(M);
-		M=cambcol(matrix,MatRES);
-		d1=det(M);
+		cont=1;
+		cambcol(matrix,MatRES,M,cont);
+		d2=det(M);
+		cont=2;
+		cambcol(matrix,MatRES,M,cont);
+		d3=det(M);
+
+		printf("Los valores de las incognitas son: \nx=");
+		incognita(D1,d1);
+		printf("y=");
+		incognita(D1,d2);
+		printf("z=");
+		incognita(D1,d3);
 	}
 
-	void captura (int M[3][3])
+	void incognita (int D,int d)
+	{
+		float x;
+		x=(d/D);
+		printf("%.2f \n",x);
+	}
+	void captura (int M[3][3],int MatRES[3][1])
 	{
 		for(f=0;f<3;f++)
 		{
@@ -1670,12 +1762,31 @@ otros
 				scanf("%d",&M[f][c]);
 				printf("\n");
 			}
+			printf(" RES %d=",f);
+			scanf("%d",&MatRES[f][1]);
+			printf("\n");
 		}
 	}
 
 	int det(int a[3][3])
 	{
 		int d;
-  		d = a[0][0] * ((a[1][1]*a[2][2]) - (a[2][1]*a[1][2])) -a[0][1] * (a[1][0]* a[2][2] - a[2][0] * a[1][2]) + a[0][2] * (a[1][0] * a[2][1] - a[2][0] * a[1][1]);
+		d = a[0][0] * ((a[1][1]*a[2][2]) - (a[2][1]*a[1][2])) -a[0][1] * (a[1][0]* a[2][2] - a[2][0] * a[1][2]) + a[0][2] * (a[1][0] * a[2][1] - a[2][0] * a[1][1]);
+		printf(" det=  %d \n",d);
+		return(d);
 	}
 
+	void cambcol(int matrix[3][3], int MatRES[3][1],int M[3][3],int cont)
+	{
+		for(f=0;f<3;f++)
+		{
+			for(c=0;c<3;c++)
+			{
+				M[f][c]=matrix[f][c];
+			}
+		}
+		for(f=0;f<3;f++)
+		{
+			M[f][cont]=MatRES[f][1];
+		}
+	}
